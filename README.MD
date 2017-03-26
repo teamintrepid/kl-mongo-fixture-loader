@@ -5,7 +5,7 @@
 This module is installed via npm:
 
 ``` bash
-npm install mongo-fixture-loader
+npm install kl-mongo-fixture-loader
 ```
 
 ## Usage
@@ -13,7 +13,7 @@ npm install mongo-fixture-loader
 Requires a mongoose or a native mongodb connection
 You must deal with the connection lifecycle externally in your app (i.e. open/close connection)
 ``` js
-import { FixturesUtil } from 'mongo-fixture-loader';
+import { FixturesUtil } from 'kl-mongo-fixture-loader';
 const fixtures = new FixturesUtil(connection);
 ```
 
