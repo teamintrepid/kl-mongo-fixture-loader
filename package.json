@@ -1,0 +1,49 @@
+{
+  "name": "kl-mongo-fixture-loader",
+  "version": "1.0.0",
+  "description": "Allows you to load and unload fixture data quickly from EJSON files which are easily modifiable",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "NODE_ENV=test ./node_modules/.bin/mocha --reporter spec ./lib/test/test.js",
+    "coverage": "npm run pretest && NODE_ENV=test node ./node_modules/istanbul/lib/cli.js cover --hook-run-in-context ./node_modules/mocha/bin/_mocha -- -R spec ./lib/test/test.js",
+    "coverage.xunit": "NODE_ENV=test JUNIT_REPORT_PATH=tests-xunit.xml JUNIT_REPORT_STACK=1 JUNIT_REPORT_NAME=BAUAPI ./node_modules/istanbul/lib/cli.js  cover ./node_modules/.bin/_mocha -- -R mocha-jenkins-reporter ./lib/test/index.js",
+    "prepublish": "npm run compile",
+    "pretest": "npm run compile",
+    "compile": "rm -rf lib && ./node_modules/babel-cli/bin/babel.js -d ./lib ./src --source-maps --copy-files",
+    "lint": "./node_modules/eslint/bin/eslint.js ./src/**/*.js",
+    "citest": "npm run pretest && JUNIT_REPORT_PATH=tests-xunit.xml JUNIT_REPORT_STACK=1 JUNIT_REPORT_NAME=TGSVC ./node_modules/istanbul/lib/cli.js  cover node_modules/.bin/_mocha -- -R mocha-jenkins-reporter ./lib/test/test.js"
+  },
+  "author": "Jai Chopra <jaichopra@kentandlime.com.au",
+  "contributors": [
+    {
+      "name": "Jai Chopra",
+      "email": "jaichopra@kentandlime.com.au"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/kentandlime/kal-dep-fixtures-bau.git"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^2.1.18",
+    "mongodb-extended-json": "1.7.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.6.5",
+    "babel-eslint": "^6.0.x",
+    "babel-plugin-transform-runtime": "^6.6.0",
+    "babel-preset-es2015": "6.6.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-runtime": "^5.8.24",
+    "eslint": "^2.4.0",
+    "eslint-config-airbnb": "^6.1.0",
+    "eslint-plugin-react": "^4.2.3",
+    "istanbul": "^0.3.22",
+    "mocha": "^2.2.5",
+    "mocha-jenkins-reporter": "^0.2.1",
+    "mongoose": "^4.4.13",
+    "should": "^8.3.1",
+    "source-map-support": "^0.4.0"
+  }
+}

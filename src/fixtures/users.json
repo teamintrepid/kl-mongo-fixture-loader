@@ -1,0 +1,14 @@
+[
+  {
+    "_id": {
+      "$oid": "5542fd3b3db334ea42a5ca34"
+    },
+    "lastName": "Chopra",
+    "firstName": "Jai",
+    "email": "jaichopra@kentandlime.com.au",
+    "username": "jaichopra",
+    "created": {
+      "$date": "2015-05-01T04:12:43.065Z"
+    }
+  }
+]
