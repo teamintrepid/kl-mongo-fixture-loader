@@ -19,17 +19,22 @@ const fixtures = new FixturesUtil(connection);
 
 To refresh the data (both remove and seed)
 ``` js
-fixtures.refresh();
+await fixtures.refresh();
+```
+
+To refresh the data (promise based)
+``` js
+fixtures.refresh().then(() => { console.log('refreshed!') });
 ```
 
 To seed the data
 ``` js
-fixtures.seed();
+await fixtures.seed();
 ```
 
 To remove the data
 ``` js
-fixtures.remove();
+await fixtures.remove();
 ```
 
 To inspect the data
