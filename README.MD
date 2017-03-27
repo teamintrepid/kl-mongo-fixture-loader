@@ -1,4 +1,4 @@
-# kal-dep-fixtures-bau
+# kl-mongo-fixture-loader
 
 ## Installation
 
